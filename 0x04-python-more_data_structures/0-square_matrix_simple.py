@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
 	square = []
-	
 	for row in matrix:
 		b = []
 		for a in row:
