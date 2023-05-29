@@ -5,7 +5,7 @@ def safe_print_list(my_list=[], x=0):
         while a < x:
             print("{:d}".format(my_list[i]), end="")
             a += 1
-    except:
+    except Exception:
         pass
     print()
     return a
