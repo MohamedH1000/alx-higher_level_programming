@@ -9,7 +9,7 @@ class Square:
     Attributes:
         size: the square size (1 side)
     """
-    def __init__(self, size=0):
+    def __init__(self, size=0, position=(0, 0)):
         """new instances of a square to be created
 
         Args:
