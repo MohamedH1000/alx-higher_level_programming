@@ -15,14 +15,8 @@ class Square:
         Args:
             size: square size (1 side)
         """
-        self.__size = size
-
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
-        else:
-            self.__size = size
+        self.size = size
+        self.position = position
 
     def area(self):
         """an area of a square to be setermined
