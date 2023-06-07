@@ -1,0 +1,111 @@
+The ``matrix_divided`` module
+======================
+
+Using ``matrix_divided``
+-------------------
+
+Write a function that divides all elements of a matrix.
+
+    Prototype: def matrix_divided(matrix, div):
+    matrix must be a list of lists of integers or floats, 
+    otherwise raise a TypeError exception with the message matrix must be a matrix (list of lists) 
+    of integers/floats
+
+    Each row of the matrix must be of the same size, otherwise raise a TypeError exception 
+    with the message Each row of the matrix must have the same size
+
+    div must be a number (integer or float), otherwise raise a TypeError exception 
+    with the message div must be a number
+
+    div can’t be equal to 0, otherwise raise a ZeroDivisionError exception 
+    with the message division by zero
+
+    All elements of the matrix should be divided by div, rounded to 2 decimal places
+    Returns a new matrix
+    You are not allowed to import any module
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+>>> matrix = [[14, 12, 10], [50, 40, 30], [42, 24, 20]]
+>>> div = 1
+>>> matrix_divided(matrix, div)
+[[14.0, 12.0, 10.0], [50.0, 40.0, 30.0], [42.0, 24.0, 20.0]]
+>>> matrix = [[14, 12, 10], [50, 40, 30], [42, 24, 20]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+[[7.0, 6.0, 5.0], [25.0, 20.0, 15.0], [21.0, 12.0, 10.0]]
+>>> matrix = [[14, 12, 10], [50, 40, 30], [42, 24, 20]]
+>>> div = 0
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 12, in matrix_divided
+ZeroDivisionError: division by zero
+>>> matrix = [[14, 12, 10], [50, 40, 30], [42, 24, 20]]
+>>> div = "3"
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 10, in matrix_divided
+TypeError: div must be a number
+>>> matrix = [[14, 12, 10], [50, 40, 30], [42, 24, 20]]
+>>> div = 2.3671
+>>> matrix_divided(matrix, div)
+[[5.91, 5.06, 4.22], [21.12, 16.89, 12.67], [17.74, 10.13, 8.44]]
+>>> matrix = [[14, 12, 10], [50, 40, 30], [42, 24]]
+>>> div = 5
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 17, in matrix_divided
+TypeError: Each row of the matrix must have the same size
+>>> matrix = [[14, 12, 10], [50, 40], [42, 24]]
+>>> div = 7
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 17, in matrix_divided
+TypeError: Each row of the matrix must have the same size
+>>> matrix = [[14.25, 12.25, 10.25], [50.25, 40.25, 30.25], [42.25, 24.25, 20.25]]
+>>> div = 2
+>>> matrix_divided(matrix, div)
+[[7.12, 6.12, 5.12], [25.12, 20.12, 15.12], [21.12, 12.12, 10.12]]
+>>> matrix = [[14.25, 12.25, 10.25], [50.25, 40.25, 30.25], [42.25, 24.25, "20.25"]]
+>>> div = 4
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 22, in matrix_divided
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = [[14.25, 12.25, 10.25], [50.25, "40.25", 30.25], [42.25, 24.25, 20.25]] 
+>>> div = 4
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 22, in matrix_divided
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = [["14.25", 12.25, 10.25], [50.25, 40.25, 30.25], [42.25, 24.25, 20.25]]
+>>> div = 4
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 22, in matrix_divided
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = [[7, 9], 3]
+>>> div = 4
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 17, in matrix_divided
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = ["5", [2, 10]]
+>>> div = 8
+>>> matrix_divided(matrix, div)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 17, in matrix_divided
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> matrix = [[3, 4], [5, 6]]
+>>> div = 7
+>>> len(matrix_divided(matrix, div)) == len(matrix)
+True
+>>>
