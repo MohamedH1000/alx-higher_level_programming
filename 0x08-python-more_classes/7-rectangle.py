@@ -55,10 +55,13 @@ class Rectangle():
 
         for a in range(0, self.height):
             for b in range(0, self.width):
-                strn += '#'
-            if a != self.height - 1:
-                strn += '\n'
-        return strn
+                try:
+                    ttl += str(self.print_symbol)
+                except Exception:
+                    ttl += type(self).print_symbol
+            if a is not self.__height - 1:
+                ttl += "\n"
+        return ttl
 
     def __repr__(self):
         strn = "Rectangle("
