@@ -49,10 +49,7 @@ class Rectangle():
         """ when str or print is called this
         define a str permission
         """
-        strn = ""
-        if self.width == 0 or self.height == 0:
-            return strn
-
+        ttl = ""
         for a in range(0, self.height):
             for b in range(0, self.width):
                 try:
