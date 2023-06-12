@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    My list class
+    my list contained in a class
 """
 
 
