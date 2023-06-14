@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module for log parsing scripts.
+log parsing script module
 """
 
 
@@ -8,34 +8,34 @@ import sys
 
 
 if __name__ == "__main__":
-    size = [0]
-    codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
+    sze = [0]
+    cds = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 
-    def check_match(line):
-        '''Checks for regexp match in line.'''
+    def check_match(ln):
+        '''macth in line regexp check'''
         try:
-            line = line[:-1]
-            words = line.split(" ")
-            size[0] += int(words[-1])
-            code = int(words[-2])
-            if code in codes:
-                codes[code] += 1
+            ln = ln[:-1]
+            wrds = ln.split(" ")
+            sze[0] += int(wrds[-1])
+            cde = int(wrds[-2])
+            if cde in cds:
+                cds[cde] += 1
         except ValueError:
             pass
 
     def print_stats():
-        '''Prints accumulated statistics.'''
-        print("File size: {}".format(size[0]))
-        for k in sorted(codes.keys()):
-            if codes[k]:
-                print("{}: {}".format(k, codes[k]))
-    i = 1
+        '''accumulated statistics to be printed'''
+        print("File size: {}".format(sze[0]))
+        for a in sorted(cds.keys()):
+            if cds[a]:
+                print("{}: {}".format(a, cds[a]))
+    x = 1
     try:
-        for line in sys.stdin:
-            check_match(line)
-            if i % 10 == 0:
+        for ln in sys.stdin:
+            check_match(ln)
+            if x % 10 == 0:
                 print_stats()
-            i += 1
+            x += 1
     except KeyboardInterrupt:
         print_stats()
         raise
