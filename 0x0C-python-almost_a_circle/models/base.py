@@ -72,10 +72,12 @@ class Base:
         from models.square import Square
         if list_objs is not None:
             if cls is Rectangle:
-                list_objs = [[a.id, a.width, a.height, a.x, a.y] for a in list_objs]
+                list_objs = [[a.id, a.width, a.height,
+                              a.x, a.y] for a in list_objs]
             else:
                 list_objs = [[a.id, a.size, a.x, a.y] for a in list_objs]
-                with open('{}.csv'.format(cls.__name__), 'w', newline='', encoding='utf-8') as F:
+                with open('{}.csv'.format(cls.__name__), 'w', newline='',
+                          encoding='utf-8') as File:
                     wr = csv.writer(F)
                     wr.writerows(list_objs)
 
@@ -85,12 +87,14 @@ class Base:
         from models.rectangle import Rectangle
         from models.square import Square
         rt = []
-        with open('{}.csv'.format(cls.__name__), 'r', newline='', encoding='utf-8') as File:
+        with open('{}.csv'.format(cls.__name__), 'r', newline='',
+                  encoding='utf-8') as File:
             rea = csv.reader(File)
             for r in rea:
                 r = [int(ow) for ow in r]
                 if cls is Rectangle:
-                    lo = {"id": r[0], "width": r[1], "height": r[2], "i": r[3], "j": r[4]}
+                    lo = {"id": r[0], "width": r[1], "height": r[2],
+                          "i": r[3], "j": r[4]}
                 else:
                     lo = {"id": r[0], "size": r[1], "i": r[2], "j": r[3]}
                 rt.append(cls.create(**lo))
