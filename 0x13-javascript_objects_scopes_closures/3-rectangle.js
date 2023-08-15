@@ -13,6 +13,6 @@ class Rectangle {
     for (let a = 0; a < this.height; a++) {
       console.log('X'.repeat(this.width));
     }
-  };
+  }
 }
 module.exports = Rectangle;
