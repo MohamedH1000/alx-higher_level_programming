@@ -1,10 +1,11 @@
 #!/usr/bin/python3
+"""Write a script that takes in the name of a state as an argument"""
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    dtbs = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], dtbs=sys.argv[3])
-    c = dtbs.cursor()
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    c = db.cursor()
     c.execute("SELECT * FROM `cities` as `c` \
                 INNER JOIN `states` as `s` \
                    ON `c`.`state_id` = `s`.`id` \
