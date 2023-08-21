@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Write a python file that contains the class"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
