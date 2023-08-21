@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Write a script that lists all State objects from the database"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -9,7 +10,7 @@ if __name__ == "__main__":
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     Session = sessionmaker(bind=eng)
-    session = Session()
+    season = Session()
 
-    for state in session.query(State).order_by(State.id):
+    for state in season.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
