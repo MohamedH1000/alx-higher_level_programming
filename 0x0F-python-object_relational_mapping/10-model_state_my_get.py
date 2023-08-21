@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Write a script that prints the State object with the name"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -9,10 +10,10 @@ if __name__ == "__main__":
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
     Session = sessionmaker(bind=eng)
-    session = Session()
+    season = Session()
 
     fnd = False
-    for state in session.query(State):
+    for state in season.query(State):
         if state.name == sys.argv[4]:
             print("{}".format(state.id))
             fnd = True
