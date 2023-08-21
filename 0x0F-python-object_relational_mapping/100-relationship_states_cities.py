@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Write a script that creates the State “California”"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""for my sql database state to be represented"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base

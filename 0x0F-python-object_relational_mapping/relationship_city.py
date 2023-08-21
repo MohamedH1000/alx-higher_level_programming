@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Represents a city for a MySQL database."""
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
