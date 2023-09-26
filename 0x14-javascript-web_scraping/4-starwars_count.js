@@ -3,7 +3,7 @@ const req = require('request');
 const url = process.argv[2];
 let ndfilms = 0;
 
-request(url, function (error, response, body) {
+req(url, function (error, response, body) {
   if (error) {
     console.error('error:', error);
   }
