@@ -9,7 +9,7 @@ req(url, function (error, response, body) {
   const film = JSON.parse(body);
   const characters = film.characters;
   for (const c of characters) {
-    request(c, function (error, response, body) {
+    req(c, function (error, response, body) {
       if (error) {
         console.error('error:', error);
       }
